@@ -1,16 +1,10 @@
-# GraphQL Ruby (Backend) + React (Frontend) Test Application
-
-## Backend
+# GraphQL Ruby + React Example
 
 ```sh
-$ cd backend
-$ bundle install && rails db:setup && rails s -p 4000
+docker-compose build
+docker-compose up
+docker-compose run backend rails db:setup
 ```
 
-## Frontend
-
-```sh
-$ cd frontend
-$ yarn install
-$ yarn start
-```
+- React frontend: http://127.0.0.1:3000/
+- Rails backend: http://127.0.0.1:4000/graphiql
