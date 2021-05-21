@@ -8,13 +8,15 @@ services:
       POSTGRES_PASSWORD: password
   backend:
     build: ./backend
+    volumes:
+      - ./backend:/myapp
     ports:
       - 4000:4000
     depends_on:
       - database
   frontend:
     build: ./frontend
+    volumes:
+      - ./frontend:/myapp
     ports:
       - 3000:3000
-    depends_on:
-      - backend
