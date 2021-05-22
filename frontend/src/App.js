@@ -1,4 +1,4 @@
-import { createClient, Provider, useMutation, useQuery } from "urql";
+import { createClient, Provider } from "urql";
 import PostsPage from "./pages/PostsPage";
 
 const urqlClient = createClient({
