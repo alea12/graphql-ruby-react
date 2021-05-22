@@ -34,12 +34,16 @@ export default function CreatePostForm({ rerunPostListQuery }) {
   function handleFormSubmit(e) {
     e.preventDefault();
 
-    createPost(formData).then(() => {
-      rerunPostListQuery();
-      setFormData({
-        title: "",
-        body: "",
-      });
+    createPost(formData).then((result) => {
+      if (result.data.createPost.errors.length > 0) {
+        alert(JSON.stringify(result.data.createPost.errors, null, 2));
+      } else {
+        rerunPostListQuery();
+        setFormData({
+          title: "",
+          body: "",
+        });
+      }
     });
   }
 
@@ -67,7 +71,6 @@ export default function CreatePostForm({ rerunPostListQuery }) {
           <button type="submit">Send</button>
         </div>
       </form>
-      {/* <pre>{JSON.stringify({ formData }, null, 2)}</pre> */}
     </div>
   );
 }
