@@ -6,7 +6,7 @@ export default function PostList({ postListQueryResult, updateSelectedPost }) {
 
   return (
     <>
-      <h2>List of Posts</h2>
+      <h2>List of Posts (click title for detail)</h2>
       <ul>
         {posts.map((p) => (
           <li key={p.id} onClick={() => updateSelectedPost(p.id)}>

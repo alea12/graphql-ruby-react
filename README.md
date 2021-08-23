@@ -1,8 +1,15 @@
 # GraphQL Ruby + React Example
 
+- Docker Compose
+
 ```sh
-docker-compose build
-docker-compose up
+docker compose build
+docker compose up
+```
+
+- Database initialization (in different shell):
+
+```sh
 docker-compose run backend rails db:setup
 ```
 
