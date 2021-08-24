@@ -3,14 +3,13 @@
 - Docker Compose
 
 ```sh
-docker compose build
 docker compose up
 ```
 
 - Database initialization (in different shell):
 
 ```sh
-docker-compose run backend rails db:setup
+docker compose run backend rails db:setup
 ```
 
 - React frontend: http://localhost:3000/
